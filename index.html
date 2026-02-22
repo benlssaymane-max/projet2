@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectroShop Pro | Boutique electronique</title>
+  <meta name="description" content="Catalogue high-tech professionnel avec paiement Stripe et contact API." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="logo" aria-label="ElectroShop Pro">
+        <span class="logo-mark">ES</span>
+        <span class="logo-text">ElectroShop Pro</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+      <nav class="nav" id="mainNav" aria-label="Navigation principale">
+        <a href="#catalogue">Catalogue</a>
+        <a href="#avantages">Avantages</a>
+        <a href="#about">A propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button id="cartButton" class="cart-btn" aria-label="Voir le panier">
+        Panier
+        <span id="cartCount" class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero reveal">
+      <div id="hero3d" class="hero-3d" aria-hidden="true"></div>
+      <div class="hero-shape hero-shape-a"></div>
+      <div class="hero-shape hero-shape-b"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Boutique electronique premium</p>
+        <h1>Le high-tech pro, pret a commander</h1>
+        <p class="hero-text">Selection moderne pour creators, gamers et equipes. Livraison rapide, garantie 2 ans, support 7j/7.</p>
+        <div class="hero-cta">
+          <a href="#catalogue" class="btn btn-primary">Voir les produits</a>
+          <a href="#contact" class="btn btn-ghost">Demander un devis</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="catalogue" class="section reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>Produits vedettes</h2>
+          <p>Prix clairs, stock verifie et details techniques.</p>
+        </div>
+        <div id="productGrid" class="product-grid"></div>
+      </div>
+    </section>
+
+    <section id="avantages" class="section section-alt reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>Pourquoi nous choisir</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Garantie 2 ans</h3>
+            <p>Produits testes et couverts avec SAV prioritaire.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Expedition rapide</h3>
+            <p>Preparation 24h avec suivi en temps reel.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Paiement securise</h3>
+            <p>Checkout Stripe et transactions chiffrees.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section reveal">
+      <div class="container about-wrap">
+        <div>
+          <p class="eyebrow">A propos</p>
+          <h2>Une boutique pensee pour les besoins reels</h2>
+        </div>
+        <p>ElectroShop Pro accompagne freelances, PME et passionnes tech avec un catalogue utile, des recommandations claires et un support humain.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-alt reveal">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact commercial</h2>
+          <p>Reponse sous 24h ouvrables.</p>
+        </div>
+
+        <form id="contactForm" class="contact-form">
+          <label for="name">Nom</label>
+          <input id="name" name="name" type="text" placeholder="Votre nom" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="vous@entreprise.com" required />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Decrivez votre besoin" required></textarea>
+
+          <button class="btn btn-primary" type="submit">Envoyer la demande</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <aside id="cartPanel" class="cart-panel" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Panier</h2>
+      <button id="closeCart" class="btn btn-small" type="button">Fermer</button>
+    </div>
+    <ul id="cartList" class="cart-list"></ul>
+    <div class="cart-foot">
+      <p>Total: <strong id="cartTotal">0.00 EUR</strong></p>
+      <div class="cart-actions">
+        <button id="clearCart" class="btn btn-ghost" type="button">Vider</button>
+        <button id="checkoutBtn" class="btn btn-primary" type="button">Payer</button>
+      </div>
+    </div>
+  </aside>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <p>&copy; <span id="year"></span> ElectroShop Pro. Tous droits reserves.</p>
+      <a href="#top">Retour en haut</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
